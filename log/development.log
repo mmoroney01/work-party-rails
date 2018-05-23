@@ -460,3 +460,309 @@ Migrating to CreateParties (20180523142950)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+Started GET "/" for 127.0.0.1 at 2018-05-23 09:55:42 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 302ms (Views: 254.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 09:59:43 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /home/mmoroney/Desktop/work-party-rails/app/assets/config
+  /home/mmoroney/Desktop/work-party-rails/app/assets/images
+  /home/mmoroney/Desktop/work-party-rails/app/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/app/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/momentjs-rails-2.20.1/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionview-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/node_modules):
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     8:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     9: 
+    10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__78652534598810986_47333685513520'
+app/controllers/index_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:01:37 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /home/mmoroney/Desktop/work-party-rails/app/assets/config
+  /home/mmoroney/Desktop/work-party-rails/app/assets/images
+  /home/mmoroney/Desktop/work-party-rails/app/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/app/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/momentjs-rails-2.20.1/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionview-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/node_modules):
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     8:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     9: 
+    10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/application.scss:1
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__78652534598810986_69928879178920'
+app/controllers/index_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:01:54 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /home/mmoroney/Desktop/work-party-rails/app/assets/config
+  /home/mmoroney/Desktop/work-party-rails/app/assets/images
+  /home/mmoroney/Desktop/work-party-rails/app/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/app/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/momentjs-rails-2.20.1/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionview-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/node_modules):
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     8:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     9: 
+    10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/application.scss:1
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__78652534598810986_69928959137900'
+app/controllers/index_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:03:32 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /home/mmoroney/Desktop/work-party-rails/app/assets/config
+  /home/mmoroney/Desktop/work-party-rails/app/assets/images
+  /home/mmoroney/Desktop/work-party-rails/app/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/app/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/momentjs-rails-2.20.1/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionview-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/node_modules):
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     8:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     9: 
+    10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/application.scss:1
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___1962476862342560743_47393553016020'
+app/controllers/index_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:04:30 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /home/mmoroney/Desktop/work-party-rails/app/assets/config
+  /home/mmoroney/Desktop/work-party-rails/app/assets/images
+  /home/mmoroney/Desktop/work-party-rails/app/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/app/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/momentjs-rails-2.20.1/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionview-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/node_modules):
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     8:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     9: 
+    10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/application.scss:1
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__2002313472059231933_47402289885980'
+app/controllers/index_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:05:00 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 132ms (Views: 95.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:05:13 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 65ms (Views: 58.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:05:22 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 166ms (Views: 162.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:05:30 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /home/mmoroney/Desktop/work-party-rails/app/assets/config
+  /home/mmoroney/Desktop/work-party-rails/app/assets/images
+  /home/mmoroney/Desktop/work-party-rails/app/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/app/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/momentjs-rails-2.20.1/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionview-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/node_modules):
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     8:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     9: 
+    10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/application.scss:1
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__2002313472059231933_70350088077000'
+app/controllers/index_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:05:34 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 254ms (Views: 244.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:05:56 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /home/mmoroney/Desktop/work-party-rails/app/assets/config
+  /home/mmoroney/Desktop/work-party-rails/app/assets/images
+  /home/mmoroney/Desktop/work-party-rails/app/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/app/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/bootstrap3-datetimepicker-rails-4.17.47/vendor/assets/stylesheets
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/momentjs-rails-2.20.1/vendor/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/actionview-5.1.6/lib/assets/compiled
+  /home/mmoroney/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/mmoroney/Desktop/work-party-rails/node_modules):
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     8:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     9: 
+    10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/application.scss:15
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__2002313472059231933_70350170132780'
+app/controllers/index_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:06:12 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 47ms (Views: 24.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:10:57 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 38ms (Views: 9.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 10:11:09 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 81ms (Views: 73.6ms | ActiveRecord: 1.9ms)
+
+
