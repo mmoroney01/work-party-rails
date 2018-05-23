@@ -8,6 +8,10 @@ class PartiesController < ApplicationController
   	place = params[:address]
   	user_id = current_user.id
 
+    # datetime = DateTime.strptime(datetime, '%Y-%m-%dT%H:%M:%S%z')
+
+    # p datetime
+
   	@party = Party.create(time: datetime, place: place, user_id: user_id)
 
     respond_to do |f|
