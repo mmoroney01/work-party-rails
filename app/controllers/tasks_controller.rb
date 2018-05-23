@@ -1,10 +1,7 @@
 class TasksController < ApplicationController
   def create
-  	guest_name = params[:task][:name]
-  	desc = params[:task][:description]
-  	party_id = params[:task][:party_id]
-
-  	@task = Task.create(description: desc, guest_name: guest_name, party_id: party_id)
+    hash = make_task_hash(params[:task])
+    @task = Task.create(hash)
 
   	respond_to do |f|
       f.html { redirect_to action: "show" }
@@ -19,5 +16,16 @@ class TasksController < ApplicationController
       f.html { redirect_to root_path }
       f.js
     end
+  end
+
+  private
+
+  def make_task_hash(params)
+    task_hash = Hash.new
+    params.each do |k,v|
+      task_hash[k.to_sym] = v
+    end
+    
+    return task_hash
   end
 end

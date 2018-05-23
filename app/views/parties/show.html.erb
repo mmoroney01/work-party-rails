@@ -14,8 +14,9 @@
 <body>
 
 <%= form_with model: Task.new do |form| %>
-  <%= form.text_field :name, placeholder: "Who made this mess?", id: "task-name" %>
-  <%= form.text_field :description, placeholder: "What is the mess?", id: "task-description" %>
+  <%= form.text_field :guest_name, placeholder: "Who made this mess?", id: "task-name" %><br>
+  <%= form.text_field :description, placeholder: "What is the mess?", id: "task-description" %><br>
+  <%= form.text_field :phone_number, placeholder: "What's this slob's number?", id: "task-phone-number" %>
   <%= form.hidden_field :party_id, :value => @party.id %>
   <%= form.submit %>
 <% end %>
