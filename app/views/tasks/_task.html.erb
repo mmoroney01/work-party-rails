@@ -1,4 +1,4 @@
-<div id="task-id">
+<div id=<%= task.id %>>
   <%= task.guest_name %>
   <%= task.description %>
   <%= button_to 'Delete', { controller: :tasks, action: :delete, id: task.id }, method: :delete, :remote => true, data: { confirm: 'Are you sure?' } %>

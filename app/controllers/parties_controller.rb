@@ -4,11 +4,8 @@ class PartiesController < ApplicationController
   end
 
   def create
-  	datetime = params[:datetime]
-  	place = params[:address]
-  	user_id = current_user.id
-
-  	@party = Party.create(time: datetime, place: place, user_id: user_id)
+    hash = make_party_hash(params)
+    @party = Party.create(hash)
 
     respond_to do |f|
       f.html { redirect_to root_path }
@@ -29,5 +26,21 @@ class PartiesController < ApplicationController
       f.html { redirect_to root_path }
       f.js
     end
+  end
+
+  private
+
+  def make_party_hash(params)
+    party_hash = Hash.new
+
+    params.each do |k,v|
+      if k == "time" || k == "place"
+        party_hash[k.to_sym] = v
+      end
+    end
+
+    party_hash[:user_id] = current_user.id
+    
+    return party_hash
   end
 end

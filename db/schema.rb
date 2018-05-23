@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180523200516) do
   create_table "tasks", force: :cascade do |t|
     t.string "description", null: false
     t.string "guest_name", null: false
+    t.string "phone_number", null: false
     t.integer "party_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
