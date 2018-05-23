@@ -1969,3 +1969,187 @@ Processing by IndexController#index as HTML
 Completed 200 OK in 110ms (Views: 105.4ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-05-23 12:58:35 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 397ms (Views: 353.1ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/parties/1" for 127.0.0.1 at 2018-05-23 12:58:38 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"rD3yiGDLhAFdbk94jtA7NORwUyan4WKc8tLYUZarbCxc3a33H8IGgx8qITNw7G9sKf5smcyzPYnbFjtfTUR8+A==", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Party with 'id'={:user_id=>1}):
+  
+app/controllers/parties_controller.rb:20:in `delete'
+Started DELETE "/parties/1" for 127.0.0.1 at 2018-05-23 12:59:24 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"rD3yiGDLhAFdbk94jtA7NORwUyan4WKc8tLYUZarbCxc3a33H8IGgx8qITNw7G9sKf5smcyzPYnbFjtfTUR8+A==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for PartiesController#delete, rendering head :no_content
+Completed 204 No Content in 66ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 12:59:28 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 117ms (Views: 94.8ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/parties/1" for 127.0.0.1 at 2018-05-23 12:59:30 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"ERE2Z6iFafPICxjntPpdtiOOfLc6cOF8TkFAO2oVEwzh8WkY14zrcYpPdqxKxgnu7gBDCFEivmlnhaM1sfoD2A==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for PartiesController#delete, rendering head :no_content
+Completed 204 No Content in 30ms (ActiveRecord: 0.2ms)
+
+
+Started DELETE "/parties/1" for 127.0.0.1 at 2018-05-23 12:59:55 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"ERE2Z6iFafPICxjntPpdtiOOfLc6cOF8TkFAO2oVEwzh8WkY14zrcYpPdqxKxgnu7gBDCFEivmlnhaM1sfoD2A==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for PartiesController#delete, rendering head :no_content
+Completed 204 No Content in 40ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:00:39 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 75ms (Views: 39.9ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/parties/1" for 127.0.0.1 at 2018-05-23 13:00:42 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"qLB6GGuPKa6aVGfzM3DK9o4R2V3eh0TJVXF1plD6W3lYUCVnFIarLNgQCbjNTJ6uQ5/m4rXVG9x8tZaoixVLrQ==", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.8ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for PartiesController#delete, rendering head :no_content
+Completed 204 No Content in 65ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:00:50 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 80ms (Views: 74.0ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/parties/3" for 127.0.0.1 at 2018-05-23 13:00:53 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"2XgX3npp0rKG2o+iYDH83CSLlx74E5B6CG5QQzhGGA0pmEihBWBQMMSe4emeDaiE6QWooZNBz28hqrNN46kI2Q==", "id"=>"3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+No template found for PartiesController#delete, rendering head :no_content
+Completed 204 No Content in 72ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:01:08 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (1.0ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 87ms (Views: 49.9ms | ActiveRecord: 4.4ms)
+
+
+Started DELETE "/parties/1" for 127.0.0.1 at 2018-05-23 13:01:11 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"K9wmb+JpS/EDJ1cUuXnQeoGuPlh9e8e8lvJGC0rF05nbPHkQnWDJc0FjOV9HRYQiTCAB5xYpmKm/NqUFkSrDTQ==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 1]]
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+No template found for PartiesController#delete, rendering head :no_content
+Completed 204 No Content in 67ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:01:12 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.9ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 93ms (Views: 87.2ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/parties/10" for 127.0.0.1 at 2018-05-23 13:01:16 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"KaSf1MgRxmGVDakAGgt2SO/XYZMmKwMhZ7yhxgdtHp3ZRMCrtxhE49dJx0vkNyIQIlleLE15XDROeELI3IIOSQ==", "id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 10]]
+  [1m[35m (18.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for PartiesController#delete, rendering head :no_content
+Completed 204 No Content in 53ms (ActiveRecord: 19.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:01:17 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.9ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 135ms (Views: 129.6ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/parties/2" for 127.0.0.1 at 2018-05-23 13:01:20 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"1iaQMQvNVkZYAC6nfYlx7ai0VmYjtuMJ6p511vqAW/gmxs9OdMTUxBpEQOyDtSW1ZTpp2UjkvBzDWpbYIW9LLA==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 2]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for PartiesController#delete, rendering head :no_content
+Completed 204 No Content in 88ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:01:21 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 137ms (Views: 131.2ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/parties/5" for 127.0.0.1 at 2018-05-23 13:01:23 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"FsTQYrWwfCuJlvTwKgjRprLewrECIQ3E+ucDmisvL//mJI8dyrn+qcvSmrvUNIX+f1D9DmlzUtHTI+CU8MA/Kw==", "id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 5]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+No template found for PartiesController#delete, rendering head :no_content
+Completed 204 No Content in 88ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:01:24 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (1.0ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 127ms (Views: 120.6ms | ActiveRecord: 1.7ms)
+
+

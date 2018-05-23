@@ -12,4 +12,9 @@ class PartiesController < ApplicationController
   def show
   	render 'show'
   end
+
+  def delete
+  	@party = Party.find(params[:id])
+  	@party.destroy
+  end
 end
