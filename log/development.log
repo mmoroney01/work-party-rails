@@ -4924,3 +4924,1121 @@ Migrating to CreateTasks (20180523200516)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:22:53 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 344ms (Views: 293.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:22:55 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+  Rendered parties/show.html.erb within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `tasks' for #<Party::ActiveRecord_Relation:0x00556710546420>):
+    14: <body>
+    15: 
+    16: <div class="task-list">
+    17:   <% @party.tasks.each do |task| %>
+    18:     <div id="task-id">
+    19:       <%= task.name %>
+    20:       <%= task.description %>
+  
+app/views/parties/show.html.erb:17:in `_app_views_parties_show_html_erb__1527376959128792809_46950571669240'
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:24:44 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 63ms (Views: 37.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:24:45 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.9ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 103ms (Views: 95.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:24:47 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+  [1m[36mCACHE Party Load (0.0ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+NoMethodError (undefined method `tasks' for #<Party::ActiveRecord_Relation:0x007f65f4ac5a88>):
+  
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:24:58 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 49ms (Views: 28.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:24:59 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (1.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 113ms (Views: 106.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:25:01 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+  [1m[36mCACHE Party Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms)
+
+
+  
+  [1m[36mCACHE Party Load (0.0ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+NoMethodError (undefined method `tasks' for #<Party::ActiveRecord_Relation:0x00556710855dc8>):
+  
+app/controllers/parties_controller.rb:24:in `show'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:29:24 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 3.4ms)
+
+
+  
+  [1m[36mCACHE Party Load (0.0ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+NoMethodError (undefined method `id' for #<Party::ActiveRecord_Relation:0x007f65f63ed768>
+Did you mean?  ids):
+  
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:29:32 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 82ms (Views: 73.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:29:33 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.9ms)
+
+
+  
+  [1m[36mCACHE Party Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+NoMethodError (undefined method `id' for #<Party::ActiveRecord_Relation:0x007f65d451f770>
+Did you mean?  ids):
+  
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:29:47 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+  [1m[36mCACHE Party Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.5ms)
+
+
+  
+  [1m[36mCACHE Party Load (0.0ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+NoMethodError (undefined method `id' for #<Party::ActiveRecord_Relation:0x007f65f8312198>
+Did you mean?  ids):
+  
+app/controllers/parties_controller.rb:24:in `show'
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:30:11 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 59ms (Views: 30.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:30:13 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.6ms)
+
+
+  
+  [1m[36mCACHE Party Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+NoMethodError (undefined method `id' for #<Party::ActiveRecord_Relation:0x007f65ec7bc678>
+Did you mean?  ids):
+  
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:30:47 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 58ms (Views: 38.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:30:48 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.9ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 78ms (Views: 69.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:30:49 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (1.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (61.8ms)
+Completed 200 OK in 138ms (Views: 116.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:30:59 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 56ms (Views: 32.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:31:00 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.8ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 84ms (Views: 71.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:34:31 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 71ms (Views: 35.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:34:49 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 98ms (Views: 87.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:35:44 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 81ms (Views: 69.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:36:30 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/mmoroney/Desktop/work-party-rails/app/views/parties/show.html.erb:16: syntax error, unexpected keyword_do_block
+...del: @task, :remote => true, do |form| @output_buffer.safe_a...
+...                               ^
+/home/mmoroney/Desktop/work-party-rails/app/views/parties/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/parties/show.html.erb:16: syntax error, unexpected keyword_do_block
+app/views/parties/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:36:55 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 97ms (Views: 85.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:39:44 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (395.5ms)
+Completed 500 Internal Server Error in 404ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tasks_path' for #<#<Class:0x007f65f4c0d490>:0x007f65d48a0070>
+Did you mean?  asset_path):
+    13: </head>
+    14: <body>
+    15: 
+    16: <%= form_with url: tasks_path do |form| %>
+    17:   <%= form.text_field :name, placeholder: "Who made this mess?" %>
+    18:   <%= form.text_field :description, placeholder: "What is the mess?" %>
+    19:   <%= form.submit %>
+  
+app/views/parties/show.html.erb:16:in `_app_views_parties_show_html_erb__1527376959128792809_70037667149420'
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:39:58 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 127ms (Views: 119.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:40:38 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (209.4ms)
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `tasks_path' for #<#<Class:0x007f65f4c0d490>:0x007f65d40cadf0>
+Did you mean?  asset_path):
+    13: </head>
+    14: <body>
+    15: 
+    16: <%= form_with model: Task.new do |form| %>
+    17:   <%= form.text_field :name, placeholder: "Who made this mess?" %>
+    18:   <%= form.text_field :description, placeholder: "What is the mess?" %>
+    19:   <%= form.submit %>
+  
+app/views/parties/show.html.erb:16:in `_app_views_parties_show_html_erb__1527376959128792809_70037663009940'
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:41:27 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 73ms (Views: 44.7ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:43:23 -0500
+  
+LoadError (Unable to autoload constant TasksController, expected /home/mmoroney/Desktop/work-party-rails/app/controllers/tasks_controller.rb to define it):
+  
+activesupport (5.1.6) lib/active_support/dependencies.rb:512:in `load_missing_constant'
+activesupport (5.1.6) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.6) lib/active_support/dependencies.rb:583:in `get'
+activesupport (5.1.6) lib/active_support/dependencies.rb:614:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:99:in `binary_params_for?'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:90:in `set_binary_encoding'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:67:in `path_parameters='
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:43:45 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 3.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `tasks' for nil:NilClass):
+    20: <% end %>
+    21: 
+    22: <div class="task-list">
+    23:   <% @party.tasks.each do |task| %>
+    24:     <div id="task-id">
+    25:       <%= task.name %>
+    26:       <%= task.description %>
+  
+app/views/parties/show.html.erb:23:in `_app_views_parties_show_html_erb__1527376959128792809_70037730864880'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:43:52 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `tasks' for nil:NilClass):
+    20: <% end %>
+    21: 
+    22: <div class="task-list">
+    23:   <% @party.tasks.each do |task| %>
+    24:     <div id="task-id">
+    25:       <%= task.name %>
+    26:       <%= task.description %>
+  
+app/views/parties/show.html.erb:23:in `_app_views_parties_show_html_erb__1527376959128792809_70037942506240'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:44:12 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 73ms (Views: 43.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:44:16 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 66ms (Views: 50.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:44:18 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 50ms (Views: 45.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:44:23 -0500
+  
+LoadError (Unable to autoload constant TasksController, expected /home/mmoroney/Desktop/work-party-rails/app/controllers/tasks_controller.rb to define it):
+  
+activesupport (5.1.6) lib/active_support/dependencies.rb:512:in `load_missing_constant'
+activesupport (5.1.6) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.6) lib/active_support/dependencies.rb:583:in `get'
+activesupport (5.1.6) lib/active_support/dependencies.rb:614:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:99:in `binary_params_for?'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:90:in `set_binary_encoding'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:67:in `path_parameters='
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:44:49 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 55ms (Views: 31.3ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:44:50 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Bs/kYbzn6OZUr9dEvDjICsFxqUBGwGuMnj3xS6nLvYA+2Du+fodIdsW0RbszLd45ov5GmpJXrsbvBTL9Ug+Ig==", "task"=>{"name"=>"31", "description"=>"31"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:44:51 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Bs/kYbzn6OZUr9dEvDjICsFxqUBGwGuMnj3xS6nLvYA+2Du+fodIdsW0RbszLd45ov5GmpJXrsbvBTL9Ug+Ig==", "task"=>{"name"=>"31", "description"=>"31"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.9ms)
+Completed 200 OK in 38ms (Views: 19.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:47:05 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 62ms (Views: 33.3ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:47:08 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GflVdpY1L+u1vKxcoHUlRBGgeLr/jbXA0JNxuEZ4j2HpGQoJ6Tytaff4whdeSXEc3C5HBZTf6tX5V5K2nZeftQ==", "task"=>{"name"=>"31", "description"=>"34", "{:party_id=>2}"=>""}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.3ms)
+Completed 200 OK in 14ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:47:30 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 45ms (Views: 42.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:47:31 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RZGcy7MNqdO6vvDjXsbprUPZzhOR2ylxIx0l7RPSK2G1ccO0zAQrUfj6nqig+r31jlfxrPqJdmQK2cbjyD07tQ==", "task"=>{"name"=>"31", "description"=>"31", "{:party_id=>2}"=>""}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.3ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:47:59 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (400.9ms)
+Completed 500 Internal Server Error in 416ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007f65f814bd50>:0x007f65dc3f89c0>):
+    16: <%= form_with model: Task.new do |form| %>
+    17:   <%= form.text_field :name, placeholder: "Who made this mess?" %>
+    18:   <%= form.text_field :description, placeholder: "What is the mess?" %>
+    19:   <%= f.hidden_field party_id: @party.id %>
+    20:   <%= form.submit %>
+    21: <% end %>
+    22: 
+  
+app/views/parties/show.html.erb:19:in `block in _app_views_parties_show_html_erb__1527376959128792809_70037731743340'
+app/views/parties/show.html.erb:16:in `_app_views_parties_show_html_erb__1527376959128792809_70037731743340'
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:48:30 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 71ms (Views: 60.5ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:48:32 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qSf1+mP/ipOD1FY/kIisiVuYqtvTyWA/ld7CWNUXqnhZx6qFHPYIEcGQOHRutPjRlhaVZLibPyq8GiFWDvi6rA==", "task"=>{"name"=>"31", "description"=>"13", "2"=>""}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.6ms)
+Completed 200 OK in 34ms (Views: 15.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:49:16 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for 2:Fixnum):
+    16: <%= form_with model: Task.new do |form| %>
+    17:   <%= form.text_field :name, placeholder: "Who made this mess?" %>
+    18:   <%= form.text_field :description, placeholder: "What is the mess?" %>
+    19:   <%= form.hidden_field :party_id, @party.id %>
+    20:   <%= form.submit %>
+    21: <% end %>
+    22: 
+  
+app/views/parties/show.html.erb:19:in `block in _app_views_parties_show_html_erb__1527376959128792809_70037948999620'
+app/views/parties/show.html.erb:16:in `_app_views_parties_show_html_erb__1527376959128792809_70037948999620'
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:49:26 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 98ms (Views: 91.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:49:29 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aORSJT3gRxjvq0OQS33JXq5Kl9iWtVFtIwRwqmRw2QCYBA1aQunFmq3vLdu1QZ0GY8SoZ/3nDngKwJOkv5/J1A==", "task"=>{"name"=>"13", "description"=>"31", "{:party_id=>2}"=>""}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:50:59 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 95ms (Views: 86.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:51:01 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jQcAItt+yFbTRIGncNIsOcmj/B1/TQFdDlyHCf+IYjt9519dpHdK1JEA7+yO7nhhBC3DohQfXkgnmGQHJGdy7w==", "task"=>{"name"=>"31", "description"=>"13", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.6ms)
+Completed 200 OK in 41ms (Views: 19.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:51:20 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 48ms (Views: 26.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:51:22 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xADCH1pF7oPi+Gnr465l7S2l6W1OrtCYsLbhT0ViaUU04J1gJUxsAaC8B6AdkjG14CvW0iX8j42ZcgJBno15kQ==", "task"=>{"name"=>"31", "description"=>"13", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.4ms)
+Completed 200 OK in 30ms (Views: 11.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:51:34 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 79ms (Views: 33.8ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:51:36 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lm07zONShqHDBW3Zvj9POH50dLIFj1L6t/M7YyskXL3ejWSznFsEI4FBA5JAAxtgs/pLDW7dDe+eN9ht8MtMaQ==", "task"=>{"name"=>"13", "description"=>"31", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 10.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:53:32 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 66ms (Views: 36.0ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:53:35 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xgE6suECF7Xe6p4FrKCyAp7nYkK2OhaPn6R7DI4c6lw24WXNnguVN5yu8E5SnOZaU2ld/d1oSZq2YJgCVfP6iA==", "task"=>{"name"=>"31", "description"=>"13", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'name' for Task.):
+  
+app/controllers/tasks_controller.rb:7:in `create'
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:53:39 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xgE6suECF7Xe6p4FrKCyAp7nYkK2OhaPn6R7DI4c6lw24WXNnguVN5yu8E5SnOZaU2ld/d1oSZq2YJgCVfP6iA==", "task"=>{"name"=>"31", "description"=>"13", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'name' for Task.):
+  
+app/controllers/tasks_controller.rb:7:in `create'
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:53:40 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xgE6suECF7Xe6p4FrKCyAp7nYkK2OhaPn6R7DI4c6lw24WXNnguVN5yu8E5SnOZaU2ld/d1oSZq2YJgCVfP6iA==", "task"=>{"name"=>"31", "description"=>"13", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'name' for Task.):
+  
+app/controllers/tasks_controller.rb:7:in `create'
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:53:41 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xgE6suECF7Xe6p4FrKCyAp7nYkK2OhaPn6R7DI4c6lw24WXNnguVN5yu8E5SnOZaU2ld/d1oSZq2YJgCVfP6iA==", "task"=>{"name"=>"31", "description"=>"13", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'name' for Task.):
+  
+app/controllers/tasks_controller.rb:7:in `create'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:54:00 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 58ms (Views: 35.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:54:02 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tcSasaEp2pFaY8Qu2xgtMAGf7N4ag9Bn/1aXsY5QvMZFJMXO3iBYExgnqmUlJHlozBHTYXHRj3LWknS/Vb+sEg==", "task"=>{"name"=>"31", "description"=>"13", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `name' for #<TasksController:0x005567116d8e18>):
+  
+app/controllers/tasks_controller.rb:7:in `create'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:54:20 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 51ms (Views: 28.0ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:54:22 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TGihSLxeTUj5sbW5zmmWMW4S5CiplLMpwpB9NjwcWei8iP43w1fPyrv12/IwVcJpo5zbl8LG7DzrVJ445/NJPA==", "task"=>{"name"=>"13", "description"=>"31", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:54:23 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TGihSLxeTUj5sbW5zmmWMW4S5CiplLMpwpB9NjwcWei8iP43w1fPyrv12/IwVcJpo5zbl8LG7DzrVJ445/NJPA==", "task"=>{"name"=>"13", "description"=>"31", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.5ms)
+Completed 200 OK in 27ms (Views: 7.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:54:56 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 52ms (Views: 28.1ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:54:59 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tm1hPKa0pxEpPmQ7YZS1howhzXw1OXMoeYP308c3xE5GjT5D2b0lk2t6CnCfqOHeQa/yw15rLD1QRxTdHNjUmg==", "task"=>{"name"=>"rt", "description"=>"tr", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (1.0ms)
+Completed 200 OK in 33ms (Views: 8.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:55:39 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 70ms (Views: 37.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:55:41 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iboKjaRB7Xao7JIni5fVkrQ06N3qZ7YTkQZOtSiB1Sp5WlXy20hv9Oqo/Gx1q4HKebrXYoE16Qa4wq27827F/g==", "task"=>{"name"=>"df", "description"=>"fd", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.9ms)
+Completed 200 OK in 40ms (Views: 10.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:56:04 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 79ms (Views: 44.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:56:06 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ky+iXmrUWDIkhFTNAUpCOHTdBkyZcqJBt82aKBvCYvrbz/0hFd3asGbAOob/dhZguVM58/Ig/VSeCXkmwC1yLg==", "task"=>{"name"=>"31", "description"=>"13", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.5ms)
+Completed 200 OK in 37ms (Views: 6.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:56:25 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 67ms (Views: 34.8ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:56:28 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PA45bVmkPejxuUrxqS4eGG7wgXkmfinb4HMe2uPbDT3M7mYSJq2/arP9JLpXEkpAo36+xk0sds7Jt/3UODQd6Q==", "task"=>{"name"=>"sdf", "description"=>"sdf", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (1.1ms)
+Completed 200 OK in 20ms (Views: 5.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:56:38 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 80ms (Views: 45.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:56:41 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nx92rzTDsoQ0ECa710zRAKRFbetj+uzWCE5ewjtFYd5v/ynQS8owBnZUSPApcIVYactSVAios8Mhir3M4KpxCg==", "task"=>{"name"=>"sdaf", "description"=>"asdf", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.7ms)
+Completed 200 OK in 35ms (Views: 6.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:56:52 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 54ms (Views: 29.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-23 15:56:55 -0500
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+c8FzkL6iY1qeTm3c1HlCDo/R/AsFwQnDAA+hSZKwB8JL1qxPfMLDyg9V/yNbbFQ97F4T0dFWzIlxN2L/aXQyw==", "task"=>{"name"=>"sdaf", "description"=>"fasd", "party_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "guest_name", "party_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "fasd"], ["guest_name", "sdaf"], ["party_id", 2], ["created_at", "2018-05-23 20:56:55.714877"], ["updated_at", "2018-05-23 20:56:55.714877"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering tasks/create.js.erb
+  Rendered tasks/create.js.erb (0.4ms)
+Completed 200 OK in 20ms (Views: 3.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:57:04 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (24.7ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Task:0x007f65d4836f30>):
+    23: <div class="task-list">
+    24:   <% @party.tasks.each do |task| %>
+    25:     <div id="task-id">
+    26:       <%= task.name %>
+    27:       <%= task.description %>
+    28:       <%= button_to 'Delete', { controller: :tasks, action: :delete, id: task.id }, method: :delete, :remote => true, data: { confirm: 'Are you sure?' } %>
+    29:     </div>
+  
+app/views/parties/show.html.erb:26:in `block in _app_views_parties_show_html_erb__1527376959128792809_70037966793920'
+app/views/parties/show.html.erb:24:in `_app_views_parties_show_html_erb__1527376959128792809_70037966793920'
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:57:16 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"delete", :controller=>"tasks", :id=>1}):
+    25:     <div id="task-id">
+    26:       <%= task.guest_name %>
+    27:       <%= task.description %>
+    28:       <%= button_to 'Delete', { controller: :tasks, action: :delete, id: task.id }, method: :delete, :remote => true, data: { confirm: 'Are you sure?' } %>
+    29:     </div>
+    30:   <% end %>
+    31: </div>
+  
+app/views/parties/show.html.erb:28:in `block in _app_views_parties_show_html_erb__1527376959128792809_70037952961280'
+app/views/parties/show.html.erb:24:in `_app_views_parties_show_html_erb__1527376959128792809_70037952961280'
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:58:14 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (17.8ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"delete", :controller=>"tasks", :id=>1}):
+    25:     <div id="task-id">
+    26:       <%= task.guest_name %>
+    27:       <%= task.description %>
+    28:       <%= button_to 'Delete', { controller: :tasks, action: :delete, id: task.id }, method: :delete, :remote => true, data: { confirm: 'Are you sure?' } %>
+    29:     </div>
+    30:   <% end %>
+    31: </div>
+  
+app/views/parties/show.html.erb:28:in `block in _app_views_parties_show_html_erb__1527376959128792809_70037944291200'
+app/views/parties/show.html.erb:24:in `_app_views_parties_show_html_erb__1527376959128792809_70037944291200'
+app/controllers/parties_controller.rb:22:in `show'
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:59:19 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 66ms (Views: 36.4ms | ActiveRecord: 2.8ms)
+
+
+Started DELETE "/tasks/1" for 127.0.0.1 at 2018-05-23 15:59:24 -0500
+Processing by TasksController#delete as JS
+  Parameters: {"authenticity_token"=>"CUIVJCv7edZZSYr2x6ann053j+fYNeJxrwbWmAjWg1f5okpbVPL7VBsN5L05mvPHg/mwWLNnvWSGwjWW0zmTgw==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering tasks/delete.js.erb
+  Rendered tasks/delete.js.erb (0.5ms)
+Completed 200 OK in 25ms (Views: 6.4ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/parties/2" for 127.0.0.1 at 2018-05-23 15:59:25 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."party_id" = ?[0m  [["party_id", 2]]
+  Rendered parties/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 36ms (Views: 31.9ms | ActiveRecord: 1.4ms)
+
+
