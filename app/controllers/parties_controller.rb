@@ -4,11 +4,11 @@ class PartiesController < ApplicationController
   end
 
   def create
-  	time = params[:datetime]
+  	datetime = params[:datetime]
   	place = params[:address]
   	user_id = current_user.id
 
-  	party = Party.create(time: time, place: place, user_id: user_id)
+  	@party = Party.create(time: datetime, place: place, user_id: user_id)
 
     respond_to do |f|
       f.html { redirect_to root_path }
