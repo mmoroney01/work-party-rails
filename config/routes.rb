@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root :controller => 'index', :action => 'index'
 
   get '/' => 'parties#index'
-  get '/party/:id' => "parties#show"
+  get '/parties/:id' => "parties#show"
 
   post '/parties' => "parties#create"
   delete '/parties/:id' => "parties#delete"
