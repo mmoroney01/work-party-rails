@@ -14,15 +14,15 @@
 <body>
 
 <%= form_with model: Task.new do |form| %>
-  <%= form.text_field :name, placeholder: "Who made this mess?" %>
-  <%= form.text_field :description, placeholder: "What is the mess?" %>
+  <%= form.text_field :name, placeholder: "Who made this mess?", id: "task-name" %>
+  <%= form.text_field :description, placeholder: "What is the mess?", id: "task-description" %>
   <%= form.hidden_field :party_id, :value => @party.id %>
   <%= form.submit %>
 <% end %>
 
 <div class="task-list">
   <% @party.tasks.each do |task| %>
-    <div id="task-id">
+    <div id=<%= task.id %>>
       <%= task.guest_name %>
       <%= task.description %>
       <%= button_to 'Delete', { controller: :tasks, action: :delete, id: task.id }, method: :delete, :remote => true, data: { confirm: 'Are you sure?' } %>
