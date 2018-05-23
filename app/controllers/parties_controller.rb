@@ -1,4 +1,8 @@
 class PartiesController < ApplicationController
+  def index
+    render 'index/index'
+  end
+
   def create
   	time = params[:datetime]
   	place = params[:address]
@@ -6,7 +10,10 @@ class PartiesController < ApplicationController
 
   	party = Party.create(time: time, place: place, user_id: user_id)
 
-  	redirect_to :action => "show", id: party.id
+    respond_to do |f|
+      f.html { redirect_to root_path }
+      f.js
+    end
   end
 
   def show
@@ -14,7 +21,11 @@ class PartiesController < ApplicationController
   end
 
   def delete
-  	@party = Party.find(params[:id])
-  	@party.destroy
+    @party = Party.destroy(params[:id])
+
+    respond_to do |f|
+      f.html { redirect_to root_path }
+      f.js
+    end
   end
 end

@@ -2153,3 +2153,1322 @@ Processing by IndexController#index as HTML
 Completed 200 OK in 127ms (Views: 120.6ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:17:51 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 417ms (Views: 356.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:19:41 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (1.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 129ms (Views: 116.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:23:11 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 60ms (Views: 28.7ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/parties/3?remote=true" for 127.0.0.1 at 2018-05-23 13:23:14 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"YRPbts5aAKcNKUh8ZFDOvVUygCvhUsshmKn0YRn/eCCR84TJsVOCJU9tJjeabJrlmLy/lIoAlDSxbRdvwhBo9A==", "remote"=>"true", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 3]]
+  [1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 20.1ms)
+
+
+  
+NameError (undefined local variable or method `tasks_url' for #<PartiesController:0x007f2378215820>):
+  
+app/controllers/parties_controller.rb:20:in `block (2 levels) in delete'
+app/controllers/parties_controller.rb:19:in `delete'
+Started DELETE "/parties/3?remote=true" for 127.0.0.1 at 2018-05-23 13:23:52 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"YRPbts5aAKcNKUh8ZFDOvVUygCvhUsshmKn0YRn/eCCR84TJsVOCJU9tJjeabJrlmLy/lIoAlDSxbRdvwhBo9A==", "remote"=>"true", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 41ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Party with 'id'=3):
+  
+app/controllers/parties_controller.rb:17:in `delete'
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:23:56 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 66ms (Views: 56.9ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/parties/4?remote=true" for 127.0.0.1 at 2018-05-23 13:23:59 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"4IIuSmAt1uVnILAyQwY7lrLmBBV7nZ0PY2o1ADnpHDkQYnE1HyRUZyVk3nm9Om/Of2g7qhDPwhpKrtYO4gYM7Q==", "remote"=>"true", "id"=>"4"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 4]]
+  [1m[35m (25.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 29.6ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"/", :controller=>"parties", :id=>"4"}):
+  
+app/controllers/parties_controller.rb:20:in `block (2 levels) in delete'
+app/controllers/parties_controller.rb:19:in `delete'
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:24:33 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 70ms (Views: 35.3ms | ActiveRecord: 4.5ms)
+
+
+Started DELETE "/parties/6?remote=true" for 127.0.0.1 at 2018-05-23 13:24:35 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"1uEdco1dy7D8PtesH3tRkDQZXJOxByXkVoKQEk/dUu8mAUIN8lRJMr56uefhRwXI+ZdjLNpVevF/RnMclDJCOw==", "remote"=>"true", "id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 6]]
+  [1m[35m (25.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 26.9ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"/", :controller=>"index", :id=>"6"}):
+  
+app/controllers/parties_controller.rb:20:in `block (2 levels) in delete'
+app/controllers/parties_controller.rb:19:in `delete'
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:24:57 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 46ms (Views: 23.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:25:38 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 67ms (Views: 42.1ms | ActiveRecord: 3.6ms)
+
+
+Started DELETE "/parties/7?remote=true" for 127.0.0.1 at 2018-05-23 13:25:41 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"bde6pqPDN7izm6/Qfv7P4qeC7c1c+FhdyGBUFATWIzidN+XZ3Mq1OvHfwZuAwpu6agzScjeqB0jhpLca3zkz7A==", "remote"=>"true", "id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 7]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 7.7ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"index", :controller=>"parties", :id=>"7"}):
+  
+app/controllers/parties_controller.rb:24:in `block (2 levels) in delete'
+app/controllers/parties_controller.rb:23:in `delete'
+Started DELETE "/parties/7?remote=true" for 127.0.0.1 at 2018-05-23 13:26:13 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"bde6pqPDN7izm6/Qfv7P4qeC7c1c+FhdyGBUFATWIzidN+XZ3Mq1OvHfwZuAwpu6agzScjeqB0jhpLca3zkz7A==", "remote"=>"true", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 404 Not Found in 26ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Party with 'id'=7):
+  
+app/controllers/parties_controller.rb:21:in `delete'
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:26:17 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 69ms (Views: 56.6ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/parties/8?remote=true" for 127.0.0.1 at 2018-05-23 13:26:19 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"WfXIi4TuT9B1vr6vZ9plMXB4UsSf0cMo2xLicWjG8WWpFZf0++fNUjf60OSZ5jFpvfZte/SDnD3y1gF/synhsQ==", "remote"=>"true", "id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 8]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:26:19 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.8ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 50ms (Views: 46.0ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/parties/9?remote=true" for 127.0.0.1 at 2018-05-23 13:26:21 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"QKNXltgsFLtnlfCeZxStpuw3qgWulmrKoM2e3mVeQgGwQwjppyWWOSXRntWZKPn+IbmVusXENd+JCX3QvrFS1Q==", "remote"=>"true", "id"=>"9"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 9]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 37ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:26:22 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 80ms (Views: 71.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:27:15 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 52ms (Views: 31.4ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/parties/11?remote=true" for 127.0.0.1 at 2018-05-23 13:27:17 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"j6SPwMdF1xBM7MNrCbpXcMJtkGplEaLuIGZmyUiEGCh/RNC/uExVkg6orSD3hgMoD+Ov1Q5D/fsJooXHk2sI/A==", "remote"=>"true", "id"=>"11"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 11]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 12.3ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"/", :controller=>"parties", :id=>"11"}):
+  
+app/controllers/parties_controller.rb:24:in `block (2 levels) in delete'
+app/controllers/parties_controller.rb:23:in `delete'
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:27:25 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 91ms (Views: 54.2ms | ActiveRecord: 3.3ms)
+
+
+Started DELETE "/parties/12?remote=true" for 127.0.0.1 at 2018-05-23 13:27:27 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"Ydz2CoEtiuzoeNUQDuyNWg1xY301zQy3GYsySwXPLJeRPKl1/iQIbqo8u1vw0NkCwP9cwl6fU6IwT9FF3iA8Qw==", "remote"=>"true", "id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 12]]
+  [1m[35m (18.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 20.7ms)
+
+
+  
+NameError (undefined local variable or method `root' for #<PartiesController:0x007f236088de68>):
+  
+app/controllers/parties_controller.rb:24:in `block (2 levels) in delete'
+app/controllers/parties_controller.rb:23:in `delete'
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:27:35 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 60ms (Views: 24.7ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:27:39 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/10/2018 1:27 PM", "address"=>"3134 North Clark Street, Chicago, IL, USA"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:27:00"], ["place", "3134 North Clark Street, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:27:39.784343"], ["updated_at", "2018-05-23 18:27:39.784343"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/party/13
+Completed 302 Found in 73ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/party/13" for 127.0.0.1 at 2018-05-23 13:27:39 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 49ms (Views: 43.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:27:43 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.9ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 59ms (Views: 48.9ms | ActiveRecord: 4.8ms)
+
+
+Started DELETE "/parties/13?remote=true" for 127.0.0.1 at 2018-05-23 13:27:45 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"S4FMKkgpIhgxqE8DFFC8Ov+ebeDAZF/wKZVCYYxgnsu7YRNVNyCgmnPsIUjqbOhiMhBSX6s2AOUAUaFvV4+OHw==", "remote"=>"true", "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 13]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 8.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"root", :controller=>"parties", :id=>"13"}):
+  
+app/controllers/parties_controller.rb:24:in `block (2 levels) in delete'
+app/controllers/parties_controller.rb:23:in `delete'
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:28:39 -0500
+  
+SyntaxError (/home/mmoroney/Desktop/work-party-rails/config/routes.rb:4: syntax error, unexpected tSTRING_BEG, expecting =>
+  root :controller => 'index', :action '/'
+                                        ^):
+  
+config/routes.rb:4: syntax error, unexpected tSTRING_BEG, expecting =>
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:28:57 -0500
+  
+AbstractController::ActionNotFound (The action '/' could not be found for IndexController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:29:24 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 27.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:29:30 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/03/2018 1:29 PM", "address"=>"3134 North Clark Street, Chicago, IL, USA"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:29:00"], ["place", "3134 North Clark Street, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:29:30.577564"], ["updated_at", "2018-05-23 18:29:30.577564"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/party/14
+Completed 302 Found in 34ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/party/14" for 127.0.0.1 at 2018-05-23 13:29:30 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:29:32 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (1.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 96ms (Views: 89.7ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/parties/14?remote=true" for 127.0.0.1 at 2018-05-23 13:29:33 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"OInWL0lnFv4FxQsa75iSTdiBcO+TcrjJdY4nqNWvjYPIaYlQNm6UfEeBZVERpMYVFQ9PUPgg59xcSsSmDkCdVw==", "remote"=>"true", "id"=>"14"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.8ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 14]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:29:33 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 53ms (Views: 43.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:29:44 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 62ms (Views: 37.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:30:42 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.9ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 121ms (Views: 111.5ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:30:50 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/03/2018 9:59 AM", "address"=>"3134 North Clark Street, Chicago, IL, USA"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 09:59:00"], ["place", "3134 North Clark Street, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:30:50.185208"], ["updated_at", "2018-05-23 18:30:50.185208"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/party/15
+Completed 302 Found in 51ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/party/15" for 127.0.0.1 at 2018-05-23 13:30:50 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:30:52 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 79ms (Views: 65.2ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:30:58 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/17/2018 1:30 PM", "address"=>"4544 North Clark Street, Chicago, IL, USA"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:30:00"], ["place", "4544 North Clark Street, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:30:58.081913"], ["updated_at", "2018-05-23 18:30:58.081913"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/party/16
+Completed 302 Found in 35ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/party/16" for 127.0.0.1 at 2018-05-23 13:30:58 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 92ms (Views: 82.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/party/16" for 127.0.0.1 at 2018-05-23 13:31:18 -0500
+Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering parties/show.html.erb within layouts/application
+  Rendered parties/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 79ms (Views: 73.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:31:19 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (1.0ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 131ms (Views: 123.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:32:44 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 71ms (Views: 48.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:32:49 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/04/2018 1:32 PM", "address"=>"3181 North Milwaukee Avenue, Chicago, IL, USA"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:32:00"], ["place", "3181 North Milwaukee Avenue, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:32:49.785917"], ["updated_at", "2018-05-23 18:32:49.785917"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:32:49 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 57ms (Views: 50.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:33:03 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/23/2018 12:07 PM", "address"=>"3134 North Clark Street, Chicago, IL, USA"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 12:07:00"], ["place", "3134 North Clark Street, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:33:03.276319"], ["updated_at", "2018-05-23 18:33:03.276319"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 58ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:33:03 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:38:17 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 68ms (Views: 29.4ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:38:21 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/01/2018 10:01 AM", "address"=>"3181 North Milwaukee Avenue, Chicago, IL, USA"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 10:01:00"], ["place", "3181 North Milwaukee Avenue, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:38:21.876244"], ["updated_at", "2018-05-23 18:38:21.876244"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:38:21 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 72ms (Views: 61.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:38:40 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 98ms (Views: 89.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:38:48 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/01/2018 1:38 PM", "address"=>"3134 North Clark Street, Chicago, IL, USA"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:38:00"], ["place", "3134 North Clark Street, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:38:48.474406"], ["updated_at", "2018-05-23 18:38:48.474406"]]
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 39ms (ActiveRecord: 20.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:38:48 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 67ms (Views: 58.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:38:58 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.8ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 135ms (Views: 128.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:39:04 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"04/02/2018 1:38 PM", "address"=>"3181 North Milwaukee Avenue, Chicago, IL, USA"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:38:00"], ["place", "3181 North Milwaukee Avenue, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:39:04.184946"], ["updated_at", "2018-05-23 18:39:04.184946"]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:39:04 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (1.0ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 92ms (Views: 81.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:41:20 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 73ms (Views: 66.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:41:28 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/01/2018 1:41 PM", "address"=>"3134 North Clark Street, Chicago, IL, USA"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:41:00"], ["place", "3134 North Clark Street, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:41:28.300242"], ["updated_at", "2018-05-23 18:41:28.300242"]]
+  [1m[35m (15.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 38ms (ActiveRecord: 20.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:41:28 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:42:12 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (1.0ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 148ms (Views: 139.8ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:42:18 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"04/01/2018 1:42 PM", "address"=>"3181 North Milwaukee Avenue, Chicago, IL, USA"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.8ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:42:00"], ["place", "3181 North Milwaukee Avenue, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:42:18.546175"], ["updated_at", "2018-05-23 18:42:18.546175"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 41ms (ActiveRecord: 18.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:42:18 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 76ms (Views: 70.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:42:22 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 143ms (Views: 133.5ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/parties/15?remote=true" for 127.0.0.1 at 2018-05-23 13:42:51 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"ZK1Gabv5O1bM203tAaiky3JuTA/SrEuHxbxGleyvOnWUTRkWxPC51I6fI6b/lPCTv+BzsLn+FJLseKWbN0AqoQ==", "remote"=>"true", "id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 15]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:42:51 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (1.0ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 66ms (Views: 63.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:45:11 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 70ms (Views: 36.3ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/parties/16?remote=true" for 127.0.0.1 at 2018-05-23 13:45:14 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"QxdYR6zWoFP2fNogiDuqWkGmKqUqNae2G4f3Jo5LI3Oz9wc4098i0bQ4tGt2B/4CjCgVGkFn+KMyQxQoVaQzpw==", "remote"=>"true", "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 16]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:45:14 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 54ms (Views: 50.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/parties/17?remote=true" for 127.0.0.1 at 2018-05-23 13:45:18 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"w501/DX2XadetNXF3/xOAgB9xdz4lm+GbJtFwh5OVFUzfWqDSv/fJRzwu44hwBpazfP6Y5PEMJNFX6bMxaFEgQ==", "remote"=>"true", "id"=>"17"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 17]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:45:18 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:46:02 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 98ms (Views: 90.9ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/parties/18?remote=true" for 127.0.0.1 at 2018-05-23 13:46:04 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"qPyvwhBBnlTB8N0p7E4QU6W06KGsqZG9X3bks9xLlltYHPC9b0gc1oO0s2ISckQLaDrXHsf7zqh2sge9B6SGjw==", "remote"=>"true", "id"=>"18"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 18]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:46:04 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 54ms (Views: 50.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:46:16 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 46ms (Views: 28.5ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/parties/19?remote=true" for 127.0.0.1 at 2018-05-23 13:46:18 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"bNqVYix3nmF69+Mh4jZ9QWgA4pz6etDjY0Z885wNUYycOsodU34c4zizjWocCikZpY7dI5Eoj/ZKgp/9R+JBWA==", "remote"=>"true", "id"=>"19"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 19]]
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 406 Not Acceptable in 24ms (ActiveRecord: 14.3ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/parties_controller.rb:26:in `delete'
+Started DELETE "/parties/19?remote=true" for 127.0.0.1 at 2018-05-23 13:47:37 -0500
+Processing by PartiesController#delete as HTML
+  Parameters: {"authenticity_token"=>"bNqVYix3nmF69+Mh4jZ9QWgA4pz6etDjY0Z885wNUYycOsodU34c4zizjWocCikZpY7dI5Eoj/ZKgp/9R+JBWA==", "remote"=>"true", "id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+Completed 404 Not Found in 26ms (ActiveRecord: 3.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Party with 'id'=19):
+  
+app/controllers/parties_controller.rb:24:in `delete'
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:47:41 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.9ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 107ms (Views: 99.1ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/parties/20" for 127.0.0.1 at 2018-05-23 13:47:43 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"nlh0CfHQRWF8wXiuzq6Dm92gZRYK4jxIOaPe7ggdVPRuuCt2jtnH4z6FFuUwktfDEC5aqWGwY10QZz3g0/JEIA==", "id"=>"20"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 20]]
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (0.5ms)
+Completed 200 OK in 39ms (Views: 6.4ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:48:03 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.8ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 118ms (Views: 109.2ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/parties/21" for 127.0.0.1 at 2018-05-23 13:48:05 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"LlOK1U2FDZK+32trkxcSH+OMWmvM+dW9b1uZoDoniFTes9WqMoyPEPybBSBtK0ZHLgJl1KeriqhGn3qu4ciYgA==", "id"=>"21"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 21]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (0.5ms)
+Completed 200 OK in 25ms (Views: 5.9ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:50:49 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.1ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 51ms (Views: 32.9ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/parties/22" for 127.0.0.1 at 2018-05-23 13:50:55 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"MLS/SBhpZzeUgNDrj0H4xmV7NJXahaxGADV3z9cEW6nAVOA3Z2DltdbEvqBxfayeqPULKrHX81Mp8ZTBDOtLfQ==", "id"=>"22"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 22]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (0.6ms)
+Completed 200 OK in 27ms (Views: 6.9ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:51:00 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 135ms (Views: 122.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:51:06 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 68ms (Views: 56.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:51:13 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/08/2018 1:51 PM", "address"=>"3134 North Clark Street, Chicago, IL, USA"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:51:00"], ["place", "3134 North Clark Street, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:51:13.261053"], ["updated_at", "2018-05-23 18:51:13.261053"]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:51:13 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:51:17 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/09/2018 1:51 PM", "address"=>"3181 North Milwaukee Avenue, Chicago, IL, USA"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:51:00"], ["place", "3181 North Milwaukee Avenue, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:51:17.342377"], ["updated_at", "2018-05-23 18:51:17.342377"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:51:17 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 58ms (Views: 53.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:53:06 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 128ms (Views: 118.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:53:20 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (2.1ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 100ms (Views: 90.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:56:28 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.8ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 94ms (Views: 88.4ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/parties/23" for 127.0.0.1 at 2018-05-23 13:56:31 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"Hra2bieymFQlz6O1gAvyHKGya/yalnvtRmC+1+Np1RvuVukRWLsa1meLzf5+N6ZEbDxUQ/HEJPhvpF3ZOIbFzw==", "id"=>"23"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 23]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (0.5ms)
+Completed 200 OK in 26ms (Views: 5.5ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:56:42 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 61ms (Views: 51.5ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/parties/24" for 127.0.0.1 at 2018-05-23 13:56:44 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"OODOjr5UKIPMiAwX+GBBfy+6EvuYtRqH7AHEO+tOcZnIAJHxwV2qAY7MYlwGXBUn4jQtRPPnRZLFxSc1MKFhTQ==", "id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 24]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (0.4ms)
+Completed 200 OK in 27ms (Views: 7.0ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:58:27 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/parties/25" for 127.0.0.1 at 2018-05-23 13:58:29 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"fkj+PL/eNc2wJ4ZCMT/JvswqU28OW8S1V252nxSOqvyOqKFDwNe3T/Jj6AnPA53mAaRs0GUJm6B+qpWRz2G6KA==", "id"=>"25"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 25]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (0.7ms)
+Completed 200 OK in 33ms (Views: 4.4ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:58:51 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 52ms (Views: 41.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:59:00 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/11/2018 1:58 PM", "address"=>"3181 North Milwaukee Avenue, Chicago, IL, USA"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:58:00"], ["place", "3181 North Milwaukee Avenue, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:59:00.869264"], ["updated_at", "2018-05-23 18:59:00.869264"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms (ActiveRecord: 19.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:59:00 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.9ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 79ms (Views: 71.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:59:05 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/04/2018 12:12 PM", "address"=>"5616 West North Avenue, Chicago, IL, USA"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 12:12:00"], ["place", "5616 West North Avenue, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:59:05.495773"], ["updated_at", "2018-05-23 18:59:05.495773"]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:59:05 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 64ms (Views: 53.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:59:11 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/19/2018 1:59 PM", "address"=>"Evanston, IL, USA"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:59:00"], ["place", "Evanston, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:59:11.589124"], ["updated_at", "2018-05-23 18:59:11.589124"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:59:11 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 96ms (Views: 86.4ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 13:59:16 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"05/12/2018 1:59 PM", "address"=>"3166 North Lincoln Avenue, Chicago, IL, USA"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 13:59:00"], ["place", "3166 North Lincoln Avenue, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 18:59:16.354338"], ["updated_at", "2018-05-23 18:59:16.354338"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:59:16 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 81ms (Views: 70.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 13:59:41 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 94ms (Views: 87.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/parties/29" for 127.0.0.1 at 2018-05-23 13:59:47 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"XsVV6EkGWdp+fNO8j3XhdlXP2vsBTNTnrkLBqfnbNhOuJQqXNg/bWDw4vfdxSbUumEHlRGoei/KHhiKnIjQmxw==", "id"=>"29"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.4ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 29]]
+  [1m[35m (24.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 5.3ms | ActiveRecord: 26.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 14:00:02 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.7ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 88ms (Views: 80.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/parties/28" for 127.0.0.1 at 2018-05-23 14:00:04 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"vhnO0SQ7Pw7g74g7HVeFB8HW9BIpU6CQU3ivO9vg3ONO+ZGuWzK9jKKr5nDja9FfDFjLrUIB/4V6vEw1AA/MNw==", "id"=>"28"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 28]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (0.7ms)
+Completed 200 OK in 34ms (Views: 7.0ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 14:01:09 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/parties/27" for 127.0.0.1 at 2018-05-23 14:01:11 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"enJYjXIxrT5yVKNEbhmjeEKa1HYojWH4VfMtRx0ZaQ+KkgfyDTgvvDAQzQ+QJfcgjxTryUPfPu18N85JxvZ52w==", "id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 27]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (0.6ms)
+Completed 200 OK in 26ms (Views: 4.5ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 14:02:15 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 101ms (Views: 95.5ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/parties/26" for 127.0.0.1 at 2018-05-23 14:02:17 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"XGv+nT8V4Aqg91ZeG9fKs4c4S339wtpZwSkJFzg/JCCsi6HiQBxiiOKzOBXl657rSrZ0wpaQhUzo7eoZ49A09A==", "id"=>"26"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.2ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 26]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (2.0ms)
+Completed 200 OK in 45ms (Views: 19.5ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 14:02:57 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.6ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 93ms (Views: 86.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 14:03:02 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"04/30/2018 2:02 PM", "address"=>"3181 North Milwaukee Avenue, Chicago, IL, USA"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 14:02:00"], ["place", "3181 North Milwaukee Avenue, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 19:03:02.842509"], ["updated_at", "2018-05-23 19:03:02.842509"]]
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 14:03:02 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 70ms (Views: 62.1ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/parties/30" for 127.0.0.1 at 2018-05-23 14:03:05 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"DeVpHtTh4Wuv+/hSbgx2HM0cIuhyD7d0VnhmLq48uyz9BTZhq+hj6e2/lhmQMCJEAJIdVxld6GF/vIUgddOr+A==", "id"=>"30"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (1.1ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 30]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (0.4ms)
+Completed 200 OK in 30ms (Views: 3.0ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2018-05-23 14:03:12 -0500
+Processing by PartiesController#create as HTML
+  Parameters: {"datetime"=>"04/30/2018 2:03 PM", "address"=>"3475 North Clark Street, Chicago, IL, USA"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "parties" ("time", "place", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", "2000-01-01 14:03:00"], ["place", "3475 North Clark Street, Chicago, IL, USA"], ["user_id", 1], ["created_at", "2018-05-23 19:03:12.703851"], ["updated_at", "2018-05-23 19:03:12.703851"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 14:03:12 -0500
+Processing by IndexController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering index/index.html.erb within layouts/application
+  [1m[36mParty Load (0.3ms)[0m  [1m[34mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered index/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/parties/31" for 127.0.0.1 at 2018-05-23 14:03:15 -0500
+Processing by PartiesController#delete as JS
+  Parameters: {"authenticity_token"=>"xDyWkxulnNsF2DAJOBWBoYepWI4D/l5LvFErczdKv0803MnsZKweWUecXkLGKdX5SidnMWisAV6Vlch97KWvmw==", "id"=>"31"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParty Load (0.5ms)[0m  [1m[34mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "parties" WHERE "parties"."id" = ?[0m  [["id", 31]]
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering parties/delete.js.erb
+  Rendered parties/delete.js.erb (1.2ms)
+Completed 200 OK in 39ms (Views: 10.2ms | ActiveRecord: 16.7ms)
+
+
